@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="cn.alvin.domain">
+    <class name="Article" table="sys_article">
+    <id name="id">
+    <generator class="native"></generator>
+    </id>
+    <property name="url"  ></property>
+    <property name="title"></property>
+    <property name="content"></property>
+    <property name="address"></property>
+    <property name="urlTwo"></property>
+    <property name="urlThree"></property>
+    <property name="article_user"></property>
+    <!-- 多对一 -->
+    <many-to-one name="user" column="user_id" class="User"></many-to-one>
+    </class>
+    
+    </hibernate-mapping>

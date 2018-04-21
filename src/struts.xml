@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<package name="sharetravel" namespace="/" extends="struts-default">
+
+		<global-exception-mappings>
+			<exception-mapping result="error"
+				exception="java.lang.RuntimeException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="UserAction_*" class="userAction" method="{1}">
+			<result name="toIndex" type="redirect">/index.jsp</result>
+			<result name="error">/login.jsp</result>
+			<result name="toSetting">/setting.jsp</result>
+		</action>
+		
+		<action name="ArticleAction_*" class="articleAction" method="{1}">
+		<result name="toIndex" type="redirect">/index.jsp</result>		
+		</action>
+		
+		<action name="AllowUserWrite_*" class="allowUserWrite" method="{1}">
+		<result name="toLogin">/login.jsp</result>
+		<result name="toFabiao">/fabiao.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
